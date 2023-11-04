@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="color-scheme" content="light">
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 	<!-- 开始SEO部分（虽然复刻版并没有任何对名气的需求，但万事都要尝试一下（指试试SEO优化怎么玩）） -->
 	<title>「他」Remake - 与君初相识，犹见故人归，他APP复刻版</title>
@@ -42,20 +43,52 @@
 		}
 
 		.first {
-			height: 65vh;
+			height: calc(100vh);
 			display: flex;
 			background-color: #302f2f;
 			color: #efecea;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			max-height: 640px;
-			min-height: 440px;
+			max-height: 1280px;
+			min-height: 684px;
+			flex-shrink: 0;
+			overflow: hidden;
 		}
 		.wavecontainer{
-			height:25vh;
-			max-height: 220px;
-			min-height: 140px;
+			height:224px;
+			flex-shrink: 0;
+		}
+		
+		.anim-in{
+			animation: animin 433ms 1 ease-out;
+			animation-fill-mode: both;
+		}
+		@keyframes animin {
+			0% {
+				opacity: 0;
+				transform: scale(0.4);
+			}
+			
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+		.anim-rise{
+			animation: animrise 1.5s 1 cubic-bezier(0.19, 0.88, 0, 1);
+			animation-delay: 800ms;
+			animation-fill-mode: both;
+		}
+		@keyframes animrise {
+			0% {
+				opacity: 0;
+				transform: translateY(256px);
+			}
+			100% {
+				opacity: 1;
+				transform: translateY(0px);
+			}
 		}
 
 		@keyframes m {
@@ -83,12 +116,12 @@
 			--c1: #635e9d;
 			--w1: radial-gradient(100% 57.3% at top, #0000 100%, var(--c1) 100.5%) no-repeat;
 			--w2: radial-gradient(100% 57.4% at bottom, var(--c1) 100%, #0000 100.5%) no-repeat;
-			top: -54px;
+			top: -110px;
 			animation: m 7s infinite linear;
 			/*无限循环动画*/
 		}
 		.waveanim2 {
-			top: -54px;
+			top: -110px;
 			height: 320px;
 			--c1: #efecea;
 			--w2: radial-gradient(100% 57.4% at top, #0000 100%, var(--c1) 100.5%) no-repeat;
@@ -96,7 +129,9 @@
 			animation: m 11s infinite linear;
 			/*无限循环动画*/
 		}
-
+		.flexgrow{
+			flex-grow: 1;
+		}
 		.dropdownicon{
 			animation: dropdownicon 2s infinite linear;
 		}
@@ -196,7 +231,8 @@
 	<div class="main">
 
 		<div class="first">
-			<svg class="mainlogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 916 916">
+			<div class="flexgrow"></div>
+			<svg class="anim-in mainlogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 916 916">
 				<defs>
 					<style>
 						.a {
@@ -228,20 +264,30 @@
 					d="M1204,998c91.41,0,169.91-58.09,200.41-139.18-109.17-13.66-218-16.28-314.41,33.18-17.6,9-30,17.32-59,30-55.57,24.29-120.71,52.76-197,42-53.15-7.5-94.8-31.65-123-48-34.61-20.07-34.51-26.63-67-45-29.16-16.49-75.74-42.83-136-45l-1.83,0C525.81,923.74,612.65,998,716,998Z"
 					transform="translate(-502 -82)" />
 			</svg>
-			<div>
+			<div class="anim-in" style="animation-delay: 200ms;">
 				<h1 style="line-height: 48px;">「他」Remake<span style="color: transparent;user-select: none;">=</span></h1>
 			</div>
-			<h3 style="color:#d8d5d3;line-height: 24px;">与君初相识，犹见故人归</h3>
-			<svg class="dropdownicon" style="margin-top: 32px;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4011" width="32" height="32"><path d="M501.76 464.896C505.856 471.04 512 471.04 518.144 471.04c6.144 0 12.288-2.048 16.384-6.144l182.272-182.272c8.192-8.192 8.192-20.48 0-28.672-8.192-8.192-20.48-8.192-28.672 0l-169.984 169.984L348.16 253.952c-8.192-8.192-20.48-8.192-28.672 0-8.192 8.192-8.192 20.48 0 28.672L501.76 464.896zM757.76 460.8c-8.192-8.192-20.48-8.192-28.672 0L518.144 671.744 307.2 460.8c-8.192-8.192-20.48-8.192-28.672 0-8.192 8.192-8.192 20.48 0 28.672l223.232 223.232c4.096 4.096 10.24 6.144 16.384 6.144 6.144 0 12.288-2.048 16.384-6.144L757.76 489.472C765.952 481.28 765.952 468.992 757.76 460.8z" p-id="4012" fill="#ffffff"></path></svg>
-		</div>
-		<div class="wavecontainer" style="width: 100%;background-color: #302f2f; position: relative; overflow: hidden; transform: translateY(-1px);">
-			<div class="waveanim1 waveanim">
+			<h3 class="anim-in" style="animation-delay: 400ms;color:#d8d5d3;line-height: 24px;">与君初相识，犹见故人归</h3>
+			
+			<div class="flexgrow" ></div>
+			<div style="color: #a1a09e;" class="anim-rise">向下滑动</div>
+			<div class="anim-rise">
+				<svg class="dropdownicon" style="margin-top: 16px;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4011" width="32" height="32"><path d="M501.76 464.896C505.856 471.04 512 471.04 518.144 471.04c6.144 0 12.288-2.048 16.384-6.144l182.272-182.272c8.192-8.192 8.192-20.48 0-28.672-8.192-8.192-20.48-8.192-28.672 0l-169.984 169.984L348.16 253.952c-8.192-8.192-20.48-8.192-28.672 0-8.192 8.192-8.192 20.48 0 28.672L501.76 464.896zM757.76 460.8c-8.192-8.192-20.48-8.192-28.672 0L518.144 671.744 307.2 460.8c-8.192-8.192-20.48-8.192-28.672 0-8.192 8.192-8.192 20.48 0 28.672l223.232 223.232c4.096 4.096 10.24 6.144 16.384 6.144 6.144 0 12.288-2.048 16.384-6.144L757.76 489.472C765.952 481.28 765.952 468.992 757.76 460.8z" p-id="4012" fill="#ffffff"></path></svg>
+			
 			</div>
-			<div class="waveanim2 waveanim">
-			</div>
+			
+			<div class="anim-rise wavecontainer" style="width: 100%;background-color: #302f2f; position: relative; overflow: hidden; transform: translateY(-1px);">
+				<div class="waveanim1 waveanim">
+				</div>
+				<div class="waveanim2 waveanim">
+				</div>
+				</div>
 		</div>
-		<div style="width: 100%;height:4px;background-color: #efecea;transform: translateY(-2px);"></div>
+		<div class="anim-rise">
+			<div style="width: 100%;height:32px;background-color: #efecea;transform: translateY(-31px);"></div>
 
+		</div>
+		
 		<div class="primarytitle">下载复刻版</div>
 		<a class="downloadbutton" href="update.html">
 			<svg t="1699074994861" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5076" width="32" height="32"><path d="M896 672c-17.066667 0-32 14.933333-32 32v128c0 6.4-4.266667 10.666667-10.666667 10.666667H170.666667c-6.4 0-10.666667-4.266667-10.666667-10.666667v-128c0-17.066667-14.933333-32-32-32s-32 14.933333-32 32v128c0 40.533333 34.133333 74.666667 74.666667 74.666667h682.666666c40.533333 0 74.666667-34.133333 74.666667-74.666667v-128c0-17.066667-14.933333-32-32-32z" fill="#ffffff" p-id="5077"></path><path d="M488.533333 727.466667c6.4 6.4 14.933333 8.533333 23.466667 8.533333s17.066667-2.133333 23.466667-8.533333l213.333333-213.333334c12.8-12.8 12.8-32 0-44.8-12.8-12.8-32-12.8-44.8 0l-157.866667 157.866667V170.666667c0-17.066667-14.933333-32-32-32s-34.133333 14.933333-34.133333 32v456.533333L322.133333 469.333333c-12.8-12.8-32-12.8-44.8 0-12.8 12.8-12.8 32 0 44.8l211.2 213.333334z" fill="#ffffff" p-id="5078"></path></svg>
