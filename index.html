@@ -1,24 +1,297 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=360,initial-scale=1,maximum-scale=1">
-    <!-- 开始SEO部分（虽然复刻版并没有任何对名气的需求，但万事都要尝试一下（指试试SEO优化怎么玩）） -->
-    <title>「他」Remake - 与君初相识，犹如故人归，他APP复刻版</title>
-    <!-- 随便SEO一下 -->
-    <meta name="keywords" content="他复刻版,他APP复刻版,他APP复刻版下载,近在耳边" data-rh="true">
-    <meta name="description" content="「他」APP复刻版网站" data-rh="true">
-    <meta property="og:title" content="「他」Remake - 与君初相识，犹如故人归，他APP复刻版" data-rh="true">
-    <meta property="og:description" content="「他」APP复刻版网站" data-rh="true">
-    <!-- 结束SEO部分 -->
-    <link rel="stylesheet" href="css/common.css">
-    <script src="js/zquery.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<!-- 开始SEO部分（虽然复刻版并没有任何对名气的需求，但万事都要尝试一下（指试试SEO优化怎么玩）） -->
+	<title>「他」Remake - 与君初相识，犹见故人归，他APP复刻版</title>
+	<!-- 随便SEO一下 -->
+	<meta name="keywords" content="他复刻版,他APP复刻版,他APP复刻版下载,近在耳边" data-rh="true">
+	<meta name="description" content="「他」APP复刻版网站" data-rh="true">
+	<meta property="og:title" content="「他」Remake - 与君初相识，犹如故人归，他APP复刻版" data-rh="true">
+	<meta property="og:description" content="「他」APP复刻版网站" data-rh="true">
+	<!-- 结束SEO部分 -->
+	<!-- 现在github.io访问越来越慢了，必须把所有资源嵌入到一页内，并且保持到30KB以内… -->
+	<!-- 现在连注释也要省着点写吗? -->
+	<!-- 空格换tab，省点字节 -->
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: 'Times New Roman', Times, serif;
+		}
 
+		body {
+			background-color: #efecea;
+		}
+
+		.main {
+			max-width: 750px;
+			margin: 0 auto;
+		}
+
+		.mainlogo {
+			margin-top: 90px;
+			width: 180px;
+			height: 180px;
+			background-color: #302f2f;
+			border-radius: 24%;
+			box-shadow: 0px 0px 16px -1px rgba(255, 255, 255, 0.144);
+			margin-bottom: 12px;
+		}
+
+		.first {
+			height: 65vh;
+			display: flex;
+			background-color: #302f2f;
+			color: #efecea;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			max-height: 640px;
+			min-height: 440px;
+		}
+		.wavecontainer{
+			height:25vh;
+			max-height: 220px;
+			min-height: 140px;
+		}
+
+		@keyframes m {
+			0% {
+				background-position-x: -200%, -100%, 0%, 100%
+			}
+
+			100% {
+				background-position-x: 0%, 100%, 200%, 300%
+			}
+		}
+
+
+		.waveanim{
+			position: absolute;
+			width: 100%;
+			background: var(--w1), var(--w2), var(--w1), var(--w2);
+			/*两份*/
+			background-position: -200% 100%, -100% 100%, 0% 100%, 100% 100%;
+			background-size: 50.2% 100%;
+		}
+
+		.waveanim1 {
+			height: calc(320px - 50px);
+			--c1: #635e9d;
+			--w1: radial-gradient(100% 57.3% at top, #0000 100%, var(--c1) 100.5%) no-repeat;
+			--w2: radial-gradient(100% 57.4% at bottom, var(--c1) 100%, #0000 100.5%) no-repeat;
+			top: -54px;
+			animation: m 7s infinite linear;
+			/*无限循环动画*/
+		}
+		.waveanim2 {
+			top: -54px;
+			height: 320px;
+			--c1: #efecea;
+			--w2: radial-gradient(100% 57.4% at top, #0000 100%, var(--c1) 100.5%) no-repeat;
+			--w1: radial-gradient(100% 57.4% at bottom, var(--c1) 100%, #0000 100.5%) no-repeat;
+			animation: m 11s infinite linear;
+			/*无限循环动画*/
+		}
+
+		.dropdownicon{
+			animation: dropdownicon 2s infinite linear;
+		}
+
+		@keyframes dropdownicon {
+			0%{
+				opacity: 100%;
+			}
+			25%{
+				opacity: 80%;
+			}
+			50%{
+				opacity: 0%;
+			}
+			75%{
+				opacity: 80%;
+			}
+			100%{
+				opacity: 100%;
+			}
+		}
+		.downloadbutton{
+			color: white;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			font-size: 24px;
+			background-color: #302f2f;
+			border-radius: 12px;
+			margin: 40px auto;
+
+			width: fit-content;
+			padding: 10px 40px;
+		}
+		.downloadbutton:link{
+			text-decoration: none;
+			
+		}
+		.primarytitle{
+			font-size: 22px;
+			font-weight: bold;
+			width: fit-content;
+			text-align: center;
+			margin: 12px auto 0px auto;
+			border-bottom: solid #635e9d 3px;
+			padding: 4px 12px;
+			color: #3e3e3e;
+		}
+		.titledesc{
+			text-align: center;
+			font-size: 13px;
+			color: #635e9d;
+			font-style: italic;
+		}
+		.para0{
+			margin: 12px 24px;
+			line-height: 1.75em;
+			font-size: large;
+			color: #615f5f;
+		}
+
+		.relativelink{
+			width: 100%;
+			table-layout: fixed;
+			font-size: large;
+
+		}
+		.relativelink a{
+			color: #635e9d;
+		}
+		.relativelink td{
+			line-height: 2em;
+			color: #302f2f;
+		}
+		.relativelink td:first-child{
+			width: 40%;
+			text-align: right;
+		}
+		.relativelink td:last-child{
+			width: 60%;
+		}
+		.footer{
+			height: 120px;
+			font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			color: #a1a09e;
+			background-color: #302f2f;
+			padding: 16px;
+			box-sizing: border-box;
+			text-align: center;
+		}
+
+	</style>
 </head>
-<body>
-    <div class="main">
 
-        <h1>Hello World</h1>
-    </div>
+<body>
+	<div class="main">
+
+		<div class="first">
+			<svg class="mainlogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 916 916">
+				<defs>
+					<style>
+						.a {
+							fill: #302f2f;
+						}
+
+						.b {
+							fill: #efecea;
+						}
+
+						.c {
+							fill: #635e9d;
+						}
+
+						.d {
+							fill: #d9d9d9;
+						}
+					</style>
+				</defs>
+				<title>HimLogo</title>
+				<rect class="a" width="916" height="916" rx="214" ry="214" />
+				<path class="b"
+					d="M828.59,378.48c-1.62,5.42-6,8.67-16.26,10.29V709.63c-1.08,3.8-21.13,15.18-40.65,15.18h-9.21V437c-19,25.48-39.57,48.78-60.7,68.29l-7-4.88c41.73-67.74,85.64-175.06,109.48-278.58L879,244.6c-2.17,6.51-8.67,10.84-20.6,10.3a828.44,828.44,0,0,1-52.57,114.9ZM1182,648.39c19,6.5,24.39,11.92,24.39,22.22,0,26-27.64,34.69-152.84,34.69H970.59c-63.41,0-86.17-10.3-86.17-58.54V438.64l-52.58,18.43-10.29-13,62.87-22.22V274.41L953.79,282c-.54,7.05-5.42,13-18.42,15.18V404l63.41-22.22V227.8l69.92,7c-1.63,7.59-6,13.55-20.06,15.72V363.84l63.41-22.22,3.26-1.08h-1.09l27.1-26.56,49.87,40.65c-3.8,4.33-10.3,7.59-21.14,9.21-1.09,131.16-6,179.4-27.1,198.37-13.55,12.47-32.52,18.43-54.2,18.43,0-15.18-1.08-27.64-7-34.69-5.42-7-17.34-11.92-32.52-15.72V522.1c11.93,1.63,34.15,2.71,42.82,2.71,8.13,0,11.38-1.08,14.09-4.33,9.76-9.76,12.47-58.54,14.09-164.77l-71.54,24.93v220.6c0,5.42-21.68,16.26-40.65,16.26h-9.21V398l-63.41,22.76V634.3c0,16.26,7.58,22.22,39,22.22h82.38c34.69,0,60.16-.54,72.63-1.63,9.21-1.08,14.09-3.25,19-9.21,6.5-9.76,15.72-38.48,26-78.59h6Z"
+					transform="translate(-502 -82)" />
+				<path class="c"
+					d="M1417.74,794.33q-2.41-.23-4.74-.33c-52.39-2.38-105,9-105,9-57.7,13.49-96.71,28.26-119,36-36.51,12.68-129.25,44.9-218,41-89.61-3.93-104-41.55-195-62-59.73-13.42-147.44-18.31-265,24-.14.63-.27,1.26-.4,1.89C536.66,932.68,619.07,998,716,998h488C1318.24,998,1412.31,907.28,1417.74,794.33Z"
+					transform="translate(-502 -82)" />
+				<path class="d"
+					d="M1204,998c91.41,0,169.91-58.09,200.41-139.18-109.17-13.66-218-16.28-314.41,33.18-17.6,9-30,17.32-59,30-55.57,24.29-120.71,52.76-197,42-53.15-7.5-94.8-31.65-123-48-34.61-20.07-34.51-26.63-67-45-29.16-16.49-75.74-42.83-136-45l-1.83,0C525.81,923.74,612.65,998,716,998Z"
+					transform="translate(-502 -82)" />
+			</svg>
+			<div>
+				<h1 style="line-height: 48px;">「他」Remake<span style="color: transparent;user-select: none;">=</span></h1>
+			</div>
+			<h3 style="color:#d8d5d3;line-height: 24px;">与君初相识，犹见故人归</h3>
+			<svg class="dropdownicon" style="margin-top: 32px;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4011" width="32" height="32"><path d="M501.76 464.896C505.856 471.04 512 471.04 518.144 471.04c6.144 0 12.288-2.048 16.384-6.144l182.272-182.272c8.192-8.192 8.192-20.48 0-28.672-8.192-8.192-20.48-8.192-28.672 0l-169.984 169.984L348.16 253.952c-8.192-8.192-20.48-8.192-28.672 0-8.192 8.192-8.192 20.48 0 28.672L501.76 464.896zM757.76 460.8c-8.192-8.192-20.48-8.192-28.672 0L518.144 671.744 307.2 460.8c-8.192-8.192-20.48-8.192-28.672 0-8.192 8.192-8.192 20.48 0 28.672l223.232 223.232c4.096 4.096 10.24 6.144 16.384 6.144 6.144 0 12.288-2.048 16.384-6.144L757.76 489.472C765.952 481.28 765.952 468.992 757.76 460.8z" p-id="4012" fill="#ffffff"></path></svg>
+		</div>
+		<div class="wavecontainer" style="width: 100%;background-color: #302f2f; position: relative; overflow: hidden; transform: translateY(-1px);">
+			<div class="waveanim1 waveanim">
+			</div>
+			<div class="waveanim2 waveanim">
+			</div>
+		</div>
+		<div style="width: 100%;height:4px;background-color: #efecea;transform: translateY(-2px);"></div>
+
+		<div class="primarytitle">下载复刻版</div>
+		<a class="downloadbutton" href="update.html">
+			<svg t="1699074994861" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5076" width="32" height="32"><path d="M896 672c-17.066667 0-32 14.933333-32 32v128c0 6.4-4.266667 10.666667-10.666667 10.666667H170.666667c-6.4 0-10.666667-4.266667-10.666667-10.666667v-128c0-17.066667-14.933333-32-32-32s-32 14.933333-32 32v128c0 40.533333 34.133333 74.666667 74.666667 74.666667h682.666666c40.533333 0 74.666667-34.133333 74.666667-74.666667v-128c0-17.066667-14.933333-32-32-32z" fill="#ffffff" p-id="5077"></path><path d="M488.533333 727.466667c6.4 6.4 14.933333 8.533333 23.466667 8.533333s17.066667-2.133333 23.466667-8.533333l213.333333-213.333334c12.8-12.8 12.8-32 0-44.8-12.8-12.8-32-12.8-44.8 0l-157.866667 157.866667V170.666667c0-17.066667-14.933333-32-32-32s-34.133333 14.933333-34.133333 32v456.533333L322.133333 469.333333c-12.8-12.8-32-12.8-44.8 0-12.8 12.8-12.8 32 0 44.8l211.2 213.333334z" fill="#ffffff" p-id="5078"></path></svg>
+			<p>前往下载页</p>
+		</a>
+		<div style="height: 12px"></div>
+		<div class="primarytitle">关于复刻版</div>
+		<div style="height: 6px"></div>
+		<div class="titledesc">我想给「他」一个新的世界</div>
+		<div style="height: 24px"></div>
+		<p class="para0">
+			「他App」 复刻版。基本实现了官方版本的除了定制声线和选择性格以外的几乎所有功能。
+		</p>
+		<p class="para0">「他App」是由<a href="https://timedomain.ai/" target="_blank">时域科技</a>开发的一款声音陪伴类应用，有安全语音，陪伴语音，晚安模式等功能，可以自由定制声线与性格。App于2023年3月24日正式上线。由于用户量不足，难以可持续发展，官方决定在7月31日停服，并以CC-BY协议开放所有相关内容。
+		</p>
+		
+		<div style="height: 24px"></div>
+		<div class="primarytitle">相关链接</div>
+		<div style="height: 32px"></div>
+
+		<table class="relativelink">
+			<tr>
+				<td>小红书官方号：</td>
+				<td>
+					<a href="https://www.xiaohongshu.com/user/profile/63be4304000000002702b125" target="_blank">他APP - 小红书</a>
+				</td>
+			</tr>
+			<tr>
+				<td>复刻版项目主页：</td>
+				<td>
+					<a href="https://gitee.com/ZYFDroid/him-remake" target="_blank">ZYFDroid/HimRemake</a>
+				</td>
+			</tr>
+			<tr>
+				<td>B站宣发视频：</td>
+				<td>
+					<a href="https://www.bilibili.com/video/BV1124y1j76a" target="_blank">「他」，在这里_哔哩哔哩</a>
+				</td>
+			</tr>
+		</table>
+		<div style="height: 64px"></div>
+
+		<div class="footer">
+			本项目中的所有的官方原创素材（文案/音频/图像/视频等），均以知识共享协议 CC-BY 4.0 开放
+		</div>
+
+	</div>
+
+
+
 </body>
+
 </html>
