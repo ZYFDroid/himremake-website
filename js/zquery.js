@@ -52,3 +52,19 @@ window.addEventListener("load", function(){
     __zqloadcb.forEach(f => f());
     __zqloaded = true;
 });
+
+function getSearchParam(){
+    var obj = {};
+    var str = window.location.search.substring(1);
+    var single=str.split("&");
+    for(var i =0;i<single.length;i++){
+        var entry = single[i].split("=");
+        var eKey = entry[0];
+        var eValue = "";
+        if(entry.length>0){
+            eValue = decodeURI(entry[1]);
+        }
+        obj[eKey] = eValue;
+    }
+    return obj;
+}
