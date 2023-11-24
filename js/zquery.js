@@ -5,7 +5,7 @@ function ZQDoms(selector){
     this._selector = selector;
     this.getDoms = function(){
         return document.querySelectorAll(this._selector);
-    }
+    };
     this.text = function (t) {
         if(t){
             this.getDoms().forEach(d => d.innerText = t);
@@ -13,23 +13,23 @@ function ZQDoms(selector){
         else{
             return this.getDoms()[0].innerText;
         }
-    }
+    };
 
     this.click = function(callback){
         this.getDoms().forEach(d => d.addEventListener("click",callback));
-    }
+    };
 
     this.show = function(){
         this.getDoms().forEach(d => d.style.visibility="visible");
-    }
+    };
     
     this.hide = function(){
         this.getDoms().forEach(d => d.style.visibility="hidden");
-    }
+    };
 
     this.css = function(key,value){
         this.getDoms().forEach(d => d.style[key]=value);
-    }
+    };
     
 }
 
@@ -46,7 +46,7 @@ var $ = function(o){
     if(type == "string"){
         return new ZQDoms(o);
     }
-}
+};
 
 window.addEventListener("load", function(){
     __zqloadcb.forEach(f => f());
