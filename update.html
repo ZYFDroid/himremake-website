@@ -230,11 +230,14 @@
 
 <body>
 	<script>
-		var versionInfo = {
+		var versionInfo = 
+//{:BEGIN_UPDATE_INFO}
+		{
 			currentVersionName: "1.3.0.0",
 			currentVersionCode: 1030000,
-			dataPackVersion: 24012001
-		};		
+			dataPackVersion: 24021201
+		}
+//{:END_UPDATE_INFO}	
 	</script>
 	<!-- zquery.min.js -->
 	<!-- 不管是JS还是图像还是什么的统统嵌入，减少HTTP请求数量 -->
@@ -243,7 +246,7 @@
 	</script>
 	<script>
 		var userVersion = getSearchParam();
-		// iOS没有。不用再问了
+		// iOS没有。不要再问了
 		function isAppleMobileDevice() {
   			return /iphone|ipod|ipad|macintosh/i.test(navigator.userAgent.toLowerCase());
 		}
@@ -366,6 +369,18 @@
 					</td>
 				</tr>
 				<tr>
+					<td>奇妙应用：</td>
+					<td>
+						<a href="https://www.magicalapk.com/appview?id=1708249294975" target="_blank">前往下载（仅安装包）</a>
+					</td>
+				</tr>
+				<tr>
+					<td>QQ群：</td>
+					<td>
+						👆群号百度网盘里有
+					</td>
+				</tr>
+				<tr>
 					<td>源代码：</td>
 					<td>
 						<a href="https://gitee.com/ZYFDroid/him-remake" target="_blank">网页链接</a>
@@ -391,10 +406,12 @@
 		<div class="titledesc">ver. <span class="dataver">-</span></div>
 		<p class="para0">
 			<ul class="itemlist">
-				<li>暂无内容更新</li>
+				<li>更新了情人节特别早安电话。</li>
+				<li>由于时空邮局需要一定时间来运输，请在2月13日23:00之前完成发送。否则可能会发生超时丢件。</li>
 				<li>
 					安装内容更新教程：<a href="help_dlc.html">关于「时空邮局」的说明</a>
 				</li>
+				<li>当前使用的技术尚有不完善的地方，会有一些瑕疵。后续会持续进行改进。</li>
 			</ul>
 		</p>
 		
